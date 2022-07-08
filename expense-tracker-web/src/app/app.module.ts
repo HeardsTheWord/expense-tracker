@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from './shared/shared.module';
 
@@ -18,8 +19,10 @@ import { LayoutComponent } from './core/layout/layout.component';
     LayoutComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedModule
   ],
   providers: [],

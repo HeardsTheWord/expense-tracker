@@ -1,3 +1,17 @@
-<div>
-  test
-</div>
+<div> test</div>
+
+<form [formGroup]="form">
+  <div formArrayName="expenses">
+    <div *ngFor="let expenseGroup of expenses?.controls; let i = index;"
+         [formGroupName]="i">
+      <h3>Expense - {{i + 1}}</h3>
+      <input type="text" formControlName="name" placeholder="name" />
+      <input type="text" formControlName="cost" placeholder="cost" />
+      <input type="text" formControlName="month" placeholder="month" />
+    </div>
+  </div>
+
+  <button (click)="addExpense()">Add Expense</button>
+</form>
+
+form - {{form.value | json}}
